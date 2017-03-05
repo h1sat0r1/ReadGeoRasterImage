@@ -15,24 +15,3 @@
 #include <opencv2\highgui\highgui.hpp>
 #include <opencv2\imgproc\imgproc.hpp>
 
-
-/* Datatype Definition */
-using DataType = double; //ここも追々入力ファイルにしたがって自動決定できるようにしたい
-
-
-/* Class: GMat */
-class GMat : public GDALDataset
-{
-private:
-
-public:
-	cv::Mat*  mat;
-	void      setMat();
-	void      dispInfo();
-
-	// Constractor
-	GMat();
-
-	// Destractor
-	~GMat();
-};

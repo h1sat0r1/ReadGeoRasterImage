@@ -1,11 +1,11 @@
 /***************************************************************************************
     Main.cpp
-	GDALライブラリを使ってGeographical Raster Dataを読み込むコード
 ***************************************************************************************/
 
 
 /* Include */
 #include "MainHeader.h"
+#include "Class.h"
 
 
 /* Functions */
@@ -29,19 +29,8 @@ int main(int argc, char** argv)
 	// Display Information
 	img->dispInfo();
 
-#if 0
-	printf(
-		"Size: x%d * y%d * c%d\n",
-		img->mat->cols,
-		img->mat->rows,
-		img->mat->channels());
-	
-	cv::Mat r;
-	cv::cvtColor(*(img->mat), r, cv::COLOR_BGR2RGB);
-	cv::namedWindow("result", CV_WINDOW_FREERATIO);
-	cv::imshow("result", r);
-	cv::waitKey(); cv::destroyAllWindows();
-#endif
+	// Display Preview
+	img->dispPrev(1);
 
 
 	printf("\nEND\n");
